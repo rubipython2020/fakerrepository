@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    {% include 'cdnfile.html' %}
+
+</head>
+<body>
+{% block content %}
+    <style>
+        body
+        {
+            background-color: lavenderblush;
+        }
+    </style>
+
+<div class="container-fluid">
+<div class="row">
+    <div class="col-md-12">
+
+    <h3 class="text-center">Employee Faker Data</h3>
+
+    <h3>Total Employee : {{ total_emp }}</h3>
+&nbsp
+    <form method="POST">
+        {% csrf_token %}
+        <input type="text" name="job1" placeholder="Enter Job...">
+        <input type="submit" class="btn btn-secondary btn-sm">
+    </form>
+    &nbsp;
+<table class="table table-bordered text-center" >
+    <thead class="bg-secondary">
+    <tr>
+    <th>First Name</th>
+    <th>Last Name</th>
+    <th>Job</th>
+    <th>Email</th>
+    <th>Salary</th>
+    <th>City</th>
+    <th>State</th>
+    <th>Address</th>
+    </tr>
+
+
+    </thead>
+    {% for i in emp %}
+    <tbody>
+    <tr>
+      <td>{{ i.first_name }}</td>
+        <td>{{ i.last_name }}</td>
+        <td>{{ i.job }}</td>
+        <td>{{ i.email }}</td>
+        <td>{{ i.salary }}</td>
+        <td>{{ i.city }}</td>
+        <td>{{ i.state }}</td>
+        <td>{{ i.address }}</td>
+
+    </tr>
+    </tbody>
+    {% endfor %}
+</table>
+    </div>
+</div>
+    </div>
+{% endblock %}
+</body>
+</html>

@@ -1,0 +1,30 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>indexing</title>
+    {% include 'cdnfile.html' %}
+</head>
+<style>
+    body
+    {
+        background: url("https://image.shutterstock.com/image-photo/nature-background-table-wood-product-260nw-285662423.jpg");
+        background-repeat: no-repeat;
+        background-size: cover;
+
+    }
+</style>
+<body>
+<div class="text-center" style="margin-top: 200px">
+   <a href="{% url 'hyddata' %}" class="btn btn-success btn-lg" >Hyderabaad</a>
+    <a href="{% url 'bangluru' %}" class="btn btn-primary btn-lg" >Banglour</a>
+    <a href="{% url 'chennai' %}" class="btn btn-warning btn-lg" >Chennai</a>
+    <a href="{% url 'pune' %}" class="btn btn-secondary btn-lg" >Pune
+    </a>
+
+
+</div>
+
+</body>
+</html>
